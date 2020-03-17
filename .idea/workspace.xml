@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="255cffd5-5245-4ec0-879b-4d7c9aaaf4ed" name="Default Changelist" comment="" />
+    <list default="true" id="255cffd5-5245-4ec0-879b-4d7c9aaaf4ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MSPR Dev/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MSPR Dev/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MSPR Dev/bo/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MSPR Dev/bo/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZGZR1DCgg6YM1kXV2WnlNm0Mvn" />
@@ -78,5 +88,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#Project_Structure/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584468015732" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1584469610190">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584469610190" />
   </component>
 </project>
