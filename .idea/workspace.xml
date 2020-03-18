@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="255cffd5-5245-4ec0-879b-4d7c9aaaf4ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_2_5_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dal/PersistenceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dal/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MSPR Dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MSPR Dev.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584555599923</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="login3">
+      <created>1584563961952</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584563961952</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,10 +161,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="608" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584560868152" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1584555598162">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1584563959680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584555598162" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584563959680" />
     <state x="585" y="115" key="CommitChangelistDialog2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543485043" />
     <state x="278" y="226" key="ExecutionTargetDialog" timestamp="1584561013931">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -195,10 +198,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="98" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584562292856" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1584555614015">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1584563979410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584555614015" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584563979410" />
     <state x="552" y="255" key="Vcs.Push.Dialog.v2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543425785" />
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584533412373">
       <screen x="0" y="0" width="1920" height="1040" />
