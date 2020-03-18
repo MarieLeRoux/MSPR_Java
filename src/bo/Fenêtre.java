@@ -14,8 +14,8 @@ public class Fenêtre extends JFrame {
     private String[] listContent = {"CARD_1", "CARD_2"};
     private JTextField field1 = new JTextField("");
     private JTextField field2 = new JTextField("");
-    //int indice = 0;
-    JComboBox combo = new JComboBox();
+    JButton boutonlog = new JButton("Connexion");
+
 
     public Fenêtre() {
         this.setTitle("Carnet d'adresses");
@@ -32,15 +32,13 @@ public class Fenêtre extends JFrame {
         card1.add(label2);
         card1.add(field2);
         field2.setPreferredSize(new Dimension(150, 30));
+        card1.add(boutonlog);
 
 
         JPanel card2 = new JPanel();
         card2.setBackground(Color.pink);
 
-
-        JPanel boutonPane = new JPanel();
-        JButton bouton3 = new JButton("suite");
-        bouton3.addActionListener(new ActionListener() {
+        boutonlog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 c1.next(content);
@@ -48,20 +46,11 @@ public class Fenêtre extends JFrame {
         });
 
 
-
-        boutonPane.add(bouton3);
-
         content.setLayout(c1);
-
-        combo.setPreferredSize(new Dimension(100, 20));
-        combo.addItem("Option 1");
-        combo.addItem("Option 2");
-
 
         content.add(card1, listContent[0]);
         content.add(card2, listContent[1]);
 
-        this.getContentPane().add(boutonPane, BorderLayout.NORTH);
         this.getContentPane().add(content, BorderLayout.CENTER);
     }
 }
