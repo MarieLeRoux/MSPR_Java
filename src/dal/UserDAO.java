@@ -1,5 +1,7 @@
 package dal;
 
+import bo.User;
+
 import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -137,4 +139,4 @@ public class UserDAO {
     }
 }
 
-}
+

@@ -1,20 +1,25 @@
 package bo;
 
+import dal.UserDAO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.Set;
 
 public class Fenêtre extends JFrame {
 
-    private CardLayout c1 = new CardLayout();
-    private JPanel content = new JPanel();
-    private JLabel titre = new JLabel("Bienvenue");
+    private static CardLayout c1 = new CardLayout();
+    private static JPanel content = new JPanel();
+    private static JLabel titre = new JLabel("Bienvenue");
     private JLabel label = new JLabel("Login");
     private JLabel label2 = new JLabel("Mot de passe");
+    private static JLabel nope = new JLabel("poui");
     private String[] listContent = {"CARD_1", "CARD_2"};
-    private JTextField field1 = new JTextField("");
-    private JTextField field2 = new JTextField("");
+    public static JTextField field1 = new JTextField("");
+    public static JTextField field2 = new JTextField("");
     private JButton boutonlog = new JButton("Connexion");
 
 
@@ -193,13 +198,17 @@ public class Fenêtre extends JFrame {
 
 
 
+
         JPanel card2 = new JPanel();
         card2.setBackground(Color.pink);
 
         boutonlog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                c1.next(content);
+
+                checkLogin();
+
+
             }
         });
 
@@ -210,5 +219,50 @@ public class Fenêtre extends JFrame {
         content.add(card2, listContent[1]);
 
         this.getContentPane().add(content, BorderLayout.CENTER);
+    }
+
+    public static void checkLogin() {
+        String login = field1.getText();
+        String password = field2.getText();
+
+
+        UserDAO userDAO = new UserDAO();
+
+        try {
+            User user = userDAO.login(login, password);
+            if (user.getName() == null) {
+                System.out.println("Mauvais login/mot de passe");
+                titre.setText("Mauvais login/mot de passe");
+            }
+            else {
+                System.out.println("Login ok pour l'utilisateur "+user.getName());
+                c1.next(content);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public static void dspContact() {
+
+        UserDAO userDAO = new UserDAO();
+
+        try {
+            Set<User> users = userDAO.findAll();
+            for ( User user : users ) {
+                System.out.printf( "%-5d %-10s %-10s%n", user.getId(), user.getName(), user.getLogin() );
+            }
+        } catch ( SQLException e ) {
+            e.printStackTrace();
+        } catch ( ClassNotFoundException e ) {
+            e.printStackTrace();
+        }
+
     }
 }
