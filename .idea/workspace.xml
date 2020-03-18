@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="255cffd5-5245-4ec0-879b-4d7c9aaaf4ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MSPR Dev/bo/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MSPR Dev/bo/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bo/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +27,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jdbc" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -98,9 +95,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="183" key="#Project_Structure" timestamp="1584468015732">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="552" y="181" key="#Project_Structure" timestamp="1584550012131">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1584550012131" />
     <state x="552" y="183" key="#Project_Structure/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584468015732" />
     <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1584543485043">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -111,25 +109,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584534580672" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1584543520422">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="908" height="271" key="GridCell.Tab.0.bottom" timestamp="1584550041294">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584476501855" />
+    <state width="908" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584550041294" />
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1584543520422">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="908" height="271" key="GridCell.Tab.0.center" timestamp="1584550041294">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584476501854" />
+    <state width="908" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584550041294" />
     <state width="1877" height="285" key="GridCell.Tab.0.center/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1584543520422">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="908" height="271" key="GridCell.Tab.0.left" timestamp="1584550041293">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584476501854" />
+    <state width="908" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584550041293" />
     <state width="1877" height="285" key="GridCell.Tab.0.left/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1584543520422">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="908" height="271" key="GridCell.Tab.0.right" timestamp="1584550041294">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584476501855" />
+    <state width="908" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584550041294" />
     <state width="1877" height="285" key="GridCell.Tab.0.right/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
     <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1584543425785">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -140,5 +138,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584533412373" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MSPR_Java$App.ic" NAME="App Coverage Results" MODIFIED="1584550041198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>bo.*</FILTER>
+    </SUITE>
   </component>
 </project>
