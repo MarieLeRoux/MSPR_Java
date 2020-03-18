@@ -6,33 +6,37 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Fenêtre extends JFrame {
-    //private JButton bouton = new JButton("bouton");
-    //private JButton bouton2 = new JButton("ou pas");
-    //private JPanel pan = new JPanel();
-    CardLayout c1 = new CardLayout();
-    JPanel content = new JPanel();
-    JLabel label = new JLabel("boiboite");
-    JLabel label2 = new JLabel("blah");
-    String[] listContent = {"CARD_1", "CARD_2"};
-    int indice = 0;
+
+    private CardLayout c1 = new CardLayout();
+    private JPanel content = new JPanel();
+    private JLabel label = new JLabel("Login");
+    private JLabel label2 = new JLabel("Mot de passe");
+    private String[] listContent = {"CARD_1", "CARD_2"};
+    private JTextField field1 = new JTextField("");
+    private JTextField field2 = new JTextField("");
+    //int indice = 0;
     JComboBox combo = new JComboBox();
 
     public Fenêtre() {
-        this.setTitle("WALLAH");
+        this.setTitle("Carnet d'adresses");
         this.setSize(500, 500);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
 
         JPanel card1 = new JPanel();
-        card1.setBackground(Color.blue);
+        card1.setBackground(Color.white);
+        card1.add(label);
+        card1.add(field1);
+        field1.setPreferredSize(new Dimension(150, 30));
         card1.add(label2);
-        card1.add(combo);
+        card1.add(field2);
+        field2.setPreferredSize(new Dimension(150, 30));
 
 
         JPanel card2 = new JPanel();
         card2.setBackground(Color.pink);
-        card2.add(label);
+
 
         JPanel boutonPane = new JPanel();
         JButton bouton3 = new JButton("suite");
@@ -43,19 +47,10 @@ public class Fenêtre extends JFrame {
             }
         });
 
-        JButton bouton4 = new JButton("par indice");
-        bouton4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (++indice > 2)
-                    indice = 0;
-                c1.show(content, listContent[indice]);
-            }
 
-        });
 
         boutonPane.add(bouton3);
-        //boutonPane.add(bouton4);
+
         content.setLayout(c1);
 
         combo.setPreferredSize(new Dimension(100, 20));
