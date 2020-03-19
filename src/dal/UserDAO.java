@@ -2,9 +2,13 @@ package dal;
 
 import bo.User;
 
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UserDAO {
     private static final String CREATE_QUERY = "INSERT INTO user (name, login, password) VALUES (?,?,?)";
@@ -67,7 +71,9 @@ public class UserDAO {
             try (PreparedStatement pst = connection.prepareStatement(FIND_BY_LOG_AND_PWD)) {
 
                 pst.setString(1, login);
-                pst.setString(2, password);
+                final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+                pst.setString(2, hash.toString());
 
                 ResultSet rs = pst.executeQuery();
 
@@ -81,7 +87,6 @@ public class UserDAO {
             }
         return user;
     }
-
     public static Set<User> findAll() throws SQLException, ClassNotFoundException {
         Connection connection = PersistenceManager.getConnection();
         Set<User> usersList = new HashSet<>();
