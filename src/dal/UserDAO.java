@@ -2,6 +2,7 @@ package dal;
 
 import bo.User;
 
+import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -136,6 +137,31 @@ public class UserDAO {
             }
         }
         return user;
+    }
+
+    public static DefaultTableModel get_contacts(int id, DefaultTableModel model) throws SQLException, ClassNotFoundException {
+        Connection connection = PersistenceManager.getConnection();
+
+
+        if (connection != null) {
+            try (PreparedStatement pst = connection.prepareStatement("SELECT lastName, firstName, phone, type FROM contact c JOIN user_contact u ON u.idUser = ?")
+            ) {
+                pst.setInt(1, id);
+                ResultSet rs = pst.executeQuery();
+                while(rs.next()){
+                    String firstName = rs.getString("firstName");
+                    String lastName = rs.getString("lastName");
+                    String phone = rs.getString("phone");
+                    String type = rs.getString("type");
+                    model.addRow(new Object[]{firstName, lastName, phone, type});
+
+                }
+
+
+            }
+        }
+        return model;
+
     }
 }
 

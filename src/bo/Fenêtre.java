@@ -3,9 +3,11 @@ package bo;
 import dal.UserDAO;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
 
@@ -23,7 +25,7 @@ public class Fenêtre extends JFrame {
     private JButton boutonlog = new JButton("Connexion");
 
 
-    public Fenêtre() {
+    public Fenêtre() throws SQLException {
         this.setTitle("Carnet d'adresses");
         this.setSize(1000, 1000);
         this.setLocationRelativeTo(null);
@@ -198,9 +200,17 @@ public class Fenêtre extends JFrame {
 
 
 
+        DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom","Téléphone","Type"}, 0);
 
+        model  = UserDAO.get_contacts(id, model);
+
+
+        JTable table = new JTable(model);
+        //JTable table = new JTable(new TableModel());
         JPanel card2 = new JPanel();
+        //table.setFillsViewportHeight(true);
         card2.setBackground(Color.pink);
+        //card2.add(table);
 
 
 
