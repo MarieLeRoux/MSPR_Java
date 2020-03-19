@@ -321,6 +321,23 @@ public class Fenêtre extends JFrame {
         JPanel cellu16 = new JPanel();
         cellu16.setBackground(Color.white);
         cellu16.setPreferredSize(new Dimension(200,50));
+        //cellule 0x4
+        JPanel cellu17 = new JPanel();
+        cellu17.setBackground(Color.white);
+        cellu17.setPreferredSize(new Dimension(200, 30));
+        //cellule 1x4
+        JPanel cellu18 = new JPanel();
+        cellu18.setBackground(Color.white);
+        cellu18.setPreferredSize(new Dimension(200, 30));
+        //cellule 2x4
+        JPanel cellu19 = new JPanel();
+        cellu19.setBackground(Color.white);
+        cellu19.setPreferredSize(new Dimension(200, 30));
+        //cellule 3x4
+        JPanel cellu20 = new JPanel();
+        cellu20.setBackground(Color.white);
+        cellu20.setPreferredSize(new Dimension(200, 30));
+
 
         JPanel card3 = new JPanel();
         card3.setBackground(Color.gray);
@@ -336,11 +353,11 @@ public class Fenêtre extends JFrame {
         //case 0x1
         gbc1.gridx = 1;
         //gbc.gridy = 0;
-        gbc1.gridwidth = 1;
+        gbc1.gridwidth = 2;
         gbc1.fill = GridBagConstraints.HORIZONTAL;
         card3.add(cellu2, gbc1);
         //case 0x2
-        gbc1.gridx = 2;
+        //gbc1.gridx = 2;
         card3.add(cellu3, gbc1);
         //case 0x3
         gbc1.gridwidth = GridBagConstraints.REMAINDER;
@@ -395,18 +412,40 @@ public class Fenêtre extends JFrame {
         gbc1.gridx = 2;
         card3.add(cellu15, gbc1);
         //case 3x3
+        gbc1.gridwidth = GridBagConstraints.REMAINDER;
         gbc1.gridx = 3;
         card3.add(cellu16, gbc1);
+        //case 4x0
+        gbc1.gridx = 0;
+        gbc1.gridy = 4;
+        gbc1.gridheight = 1;
+        gbc1.gridwidth = 1;
+        card3.add(cellu17, gbc1);
+        //case 4x1
+        gbc1.gridx = 1;
+        card3.add(cellu18, gbc1);
+        //case 4x2
+        gbc1.gridx = 2;
+        card3.add(cellu19);
+        //case 4x3
+        gbc1.gridwidth = GridBagConstraints.REMAINDER;
+        gbc1.gridx = 3;
+        card3.add(cellu20);
 
-        cellu1.add(labelajout);
-        cellu2.add(validajout);
-        cellu3.add(annulajout);
-        cellu4.add(labelnom);
-        cellu5.add(textnom);
-        cellu6.add(labelprenom);
-        cellu7.add(textprenom);
-        cellu8.add(labeltel);
-        cellu9.add(texttel);
+
+        cellu2.add(labelajout);
+
+        cellu6.add(labelnom);
+        cellu7.add(textnom);
+        textnom.setPreferredSize(new Dimension(200, 30));
+        cellu10.add(labelprenom);
+        cellu11.add(textprenom);
+        textprenom.setPreferredSize(new Dimension(200, 30));
+        cellu14.add(labeltel);
+        cellu15.add(texttel);
+        texttel.setPreferredSize(new Dimension(200, 30));
+        cellu18.add(validajout);
+        cellu19.add(annulajout);
 
 
 
