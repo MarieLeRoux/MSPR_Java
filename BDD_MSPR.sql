@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Listage de la structure de la base pour segabank
-CREATE DATABASE IF NOT EXISTS `segabank` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `segabank`;
+-- Listage de la structure de la base pour bdd_mspr
+CREATE DATABASE IF NOT EXISTS `bdd_mspr` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `bdd_mspr`;
 
--- Listage de la structure de la table segabank. contact
+-- Listage de la structure de la table bdd_mspr. contact
 CREATE TABLE IF NOT EXISTS `contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lastName` varchar(50) DEFAULT NULL,
@@ -26,25 +26,25 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Listage des données de la table segabank.contact : ~0 rows (environ)
+-- Listage des données de la table bdd_mspr.contact : ~0 rows (environ)
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 
--- Listage de la structure de la table segabank. user
+-- Listage de la structure de la table bdd_mspr. user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `login` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `lastConnection` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Listage des données de la table segabank.user : ~0 rows (environ)
+-- Listage des données de la table bdd_mspr.user : ~0 rows (environ)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
--- Listage de la structure de la table segabank. user_contact
+-- Listage de la structure de la table bdd_mspr. user_contact
 CREATE TABLE IF NOT EXISTS `user_contact` (
   `idUser` int(11) NOT NULL,
   `idContact` int(11) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `user_contact` (
   CONSTRAINT `FK__user` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Listage des données de la table segabank.user_contact : ~0 rows (environ)
+-- Listage des données de la table bdd_mspr.user_contact : ~0 rows (environ)
 /*!40000 ALTER TABLE `user_contact` DISABLE KEYS */;
 /*!40000 ALTER TABLE `user_contact` ENABLE KEYS */;
 
