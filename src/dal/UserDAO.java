@@ -71,7 +71,7 @@ public class UserDAO {
             try (PreparedStatement pst = connection.prepareStatement(FIND_BY_LOG_AND_PWD)) {
 
                 pst.setString(1, login);
-                final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                MessageDigest digest = MessageDigest.getInstance("SHA-256");
                 byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
                 pst.setString(2, hash.toString());
 
