@@ -39,6 +39,7 @@ public class Fenêtre extends JFrame {
     private JTextField texttel = new JTextField("");
     private JComboBox ctype = new JComboBox();
     private JLabel labeltype = new JLabel("Type");
+    private JButton refresh = new JButton("Refresh");
 
 
 
@@ -253,6 +254,7 @@ public class Fenêtre extends JFrame {
                     card2.add(new JScrollPane(table));;
                     card2.add(ajout);
                     card2.add(suppr);
+                    card2.add(refresh);
                 }
 
 
@@ -499,6 +501,36 @@ public class Fenêtre extends JFrame {
             }
         });
 
+        refresh.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id = frefresh();
+                if (id != 0) {
+
+                    DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom", "Téléphone", "Type"}, 0);
+
+
+                    try {
+                        model = UserDAO.get_contacts(id, model);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    } catch (ClassNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
+                    //model.fireTableRowsUpdated();
+                    //model.fireTableCellUpdated();
+
+                    //JTable table = new JTable(model);
+                    //card2.add(new JScrollPane(table));;
+                    //card2.add(ajout);
+                    //card2.add(suppr);
+                    //card2.add(refresh);
+                }
+
+
+            }
+        });
+
         validajout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -511,6 +543,7 @@ public class Fenêtre extends JFrame {
                     ex.printStackTrace();
                 }
                 c1.previous(content);
+
             }
         });
 
@@ -566,6 +599,46 @@ public class Fenêtre extends JFrame {
 
 
     }
+
+
+    public static int frefresh() {
+        String login = field1.getText();
+        String password = field2.getText();
+
+        int id = 0;
+
+
+        UserDAO userDAO = new UserDAO();
+
+        try {
+            User user = userDAO.login(login, password);
+            if (user.getName() == null) {
+                System.out.println("Mauvais login/mot de passe");
+                titre.setText("Mauvais login/mot de passe");
+
+            }
+            else {
+                System.out.println("Login ok pour l'utilisateur "+user.getName());
+                id = user.getId();
+                System.out.println(id);
+
+
+
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        return id;
+
+
+    }
+
+
 
 
 }
