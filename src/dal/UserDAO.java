@@ -3,9 +3,13 @@ package dal;
 import bo.User;
 
 import javax.swing.table.DefaultTableModel;
+import java.nio.charset.StandardCharsets;
 import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UserDAO {
     private static final String CREATE_QUERY = "INSERT INTO user (name, login, password) VALUES (?,?,?)";
@@ -68,7 +72,9 @@ public class UserDAO {
             try (PreparedStatement pst = connection.prepareStatement(FIND_BY_LOG_AND_PWD)) {
 
                 pst.setString(1, login);
-                pst.setString(2, password);
+                MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+                pst.setString(2, hash.toString());
 
                 ResultSet rs = pst.executeQuery();
 
