@@ -8,9 +8,9 @@ public class PersistenceManager {
     private static Connection connection;
     private PersistenceManager() {}
     private static final String DRIVER_CLASS = "org.mariadb.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mariadb://localhost/segabank";
+    private static final String DB_URL = "jdbc:mariadb://localhost/bdd_mspr";
     private static final String DB_LOGIN = "root";
-    private static final String DB_PWD = "root";
+    private static final String DB_PWD = "prout";
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         if(null == connection || connection.isClosed()) {
             Class.forName(DRIVER_CLASS);

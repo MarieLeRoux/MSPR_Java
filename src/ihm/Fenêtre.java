@@ -1,5 +1,7 @@
-package bo;
+package ihm;
 
+import bo.Contact;
+import bo.User;
 import dal.UserDAO;
 
 import javax.swing.*;
@@ -500,6 +502,14 @@ public class Fenêtre extends JFrame {
         validajout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Contact newContact = new Contact(textnom.getText(),textprenom.getText(),texttel.getText(),ctype.getSelectedItem().toString());
+                try {
+                    UserDAO.create(newContact);
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                } catch (ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                }
                 c1.previous(content);
             }
         });

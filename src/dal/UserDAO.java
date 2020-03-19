@@ -1,5 +1,6 @@
 package dal;
 
+import bo.Contact;
 import bo.User;
 
 import javax.swing.table.DefaultTableModel;
@@ -18,24 +19,6 @@ public class UserDAO {
     private static final String DELETE_QUERY = "DELETE FROM user WHERE id = ?";
     private static final String FIND_BY_LOG_AND_PWD = "SELECT * FROM user WHERE login = ? AND password = ?";
     private static final String UPDATE_QUERY = "UPDATE user SET name = ?, login = ?, password = ? WHERE id = ?";
-
-    public void create(User user) throws SQLException, ClassNotFoundException {
-        Connection connection = PersistenceManager.getConnection();
-        if(null != connection) {
-            try (PreparedStatement pst = connection.prepareStatement(CREATE_QUERY, Statement.RETURN_GENERATED_KEYS)){
-                pst.setString(1, user.getName());
-                pst.setString(2, user.getLogin());
-                pst.setString(3, user.getPassword());
-                pst.executeUpdate();
-                try (ResultSet rs = pst.getGeneratedKeys()) {
-                    if(rs.next()) {
-                        user.setId(rs.getInt(1));
-                    }
-                }
-
-            }
-        }
-    }
 
 
     public User findById(int id) throws SQLException, ClassNotFoundException {
@@ -169,6 +152,25 @@ public class UserDAO {
         }
         return model;
 
+    }
+
+    public static void create(Contact contact) throws SQLException, ClassNotFoundException{
+        Connection connection = PersistenceManager.getConnection();
+        if(connection != null){
+            try(PreparedStatement pst = connection.prepareStatement("INSERT INTO contact (lastName, firstName, phone, type) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS)){
+                pst.setString(1, contact.getLastName());
+                pst.setString(2, contact.getFirstName());
+                pst.setString(3, contact.getPhone());
+                pst.setString(4, contact.getType());
+                pst.executeUpdate();
+                try(ResultSet rs = pst.getGeneratedKeys()){
+                    if(rs.next()){
+                        contact.setId(rs.getInt(1));
+                    }
+                }
+            }
+
+        }
     }
 }
 
