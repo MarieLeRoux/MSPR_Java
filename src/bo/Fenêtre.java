@@ -35,6 +35,8 @@ public class Fenêtre extends JFrame {
     private JTextField textprenom = new JTextField("");
     private JLabel labeltel = new JLabel("Numéro");
     private JTextField texttel = new JTextField("");
+    private JComboBox ctype = new JComboBox();
+    private JLabel labeltype = new JLabel("Type");
 
 
 
@@ -256,7 +258,7 @@ public class Fenêtre extends JFrame {
             }
         });
 
-        //grille 4 x 4
+        //grille 5 x 4
         //cellule 0x0
         JPanel cellu1 = new JPanel();
         cellu1.setBackground(Color.white);
@@ -337,6 +339,23 @@ public class Fenêtre extends JFrame {
         JPanel cellu20 = new JPanel();
         cellu20.setBackground(Color.white);
         cellu20.setPreferredSize(new Dimension(200, 30));
+        //cellule 0x5
+        JPanel cellu21 = new JPanel();
+        cellu21.setBackground(Color.white);
+        cellu21.setPreferredSize(new Dimension(200, 30));
+        //cellule 1x5
+        JPanel cellu22 = new JPanel();
+        cellu22.setBackground(Color.white);
+        cellu22.setPreferredSize(new Dimension(200, 30));
+        //cellule 2x5
+        JPanel cellu23 = new JPanel();
+        cellu23.setBackground(Color.white);
+        cellu23.setPreferredSize(new Dimension(200, 30));
+        //cellule 3x5
+        JPanel cellu24 = new JPanel();
+        cellu24.setBackground(Color.white);
+        cellu24.setPreferredSize(new Dimension(200, 30));
+
 
 
         JPanel card3 = new JPanel();
@@ -426,11 +445,27 @@ public class Fenêtre extends JFrame {
         card3.add(cellu18, gbc1);
         //case 4x2
         gbc1.gridx = 2;
-        card3.add(cellu19);
+        card3.add(cellu19, gbc1);
         //case 4x3
         gbc1.gridwidth = GridBagConstraints.REMAINDER;
         gbc1.gridx = 3;
-        card3.add(cellu20);
+        card3.add(cellu20, gbc1);
+        //case 5x0
+        gbc1.gridx = 0;
+        gbc1.gridy = 5;
+        gbc1.gridheight = 1;
+        gbc1.gridwidth = 1;
+        card3.add(cellu21, gbc1);
+        //case 5x1
+        gbc1.gridx = 1;
+        card3.add(cellu22, gbc1);
+        //case 5x2
+        gbc1.gridx = 2;
+        card3.add(cellu23, gbc1);
+        //case 5x3
+        gbc1.gridwidth = GridBagConstraints.REMAINDER;
+        gbc1.gridx = 3;
+        card3.add(cellu24, gbc1);
 
 
         cellu2.add(labelajout);
@@ -444,8 +479,13 @@ public class Fenêtre extends JFrame {
         cellu14.add(labeltel);
         cellu15.add(texttel);
         texttel.setPreferredSize(new Dimension(200, 30));
-        cellu18.add(validajout);
-        cellu19.add(annulajout);
+        cellu18.add(labeltype);
+        cellu19.add(ctype);
+        ctype.setPreferredSize(new Dimension(100, 20));
+        ctype.addItem("PRO");
+        ctype.addItem("PERSO");
+        cellu22.add(validajout);
+        cellu23.add(annulajout);
 
 
 
