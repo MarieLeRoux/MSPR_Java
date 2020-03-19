@@ -64,7 +64,7 @@ public class UserDAO {
 
     }
 
-    public User login(String login, String password) throws SQLException, ClassNotFoundException {
+    public User login(String login, String password) throws SQLException, ClassNotFoundException, NoSuchAlgorithmException {
         Connection connection = PersistenceManager.getConnection();
         User user = new User();
 
@@ -72,9 +72,10 @@ public class UserDAO {
             try (PreparedStatement pst = connection.prepareStatement(FIND_BY_LOG_AND_PWD)) {
 
                 pst.setString(1, login);
-                MessageDigest digest = MessageDigest.getInstance("SHA-256");
-                byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
-                pst.setString(2, hash.toString());
+                //MessageDigest digest = MessageDigest.getInstance("SHA-256");
+                //byte[] hash = digest.digest(password.getBytes(StandardCharsets.UTF_8));
+                //pst.setString(2, hash.toString());
+                pst.setString(2, password);
 
                 ResultSet rs = pst.executeQuery();
 

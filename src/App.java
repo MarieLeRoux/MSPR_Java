@@ -10,7 +10,7 @@ public class App {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
        Fenêtre fenetre = new Fenêtre();
 
     }

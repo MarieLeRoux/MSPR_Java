@@ -7,6 +7,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Set;
@@ -200,12 +201,10 @@ public class Fenêtre extends JFrame {
 
 
 
-        DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom","Téléphone","Type"}, 0);
-
-        model  = UserDAO.get_contacts(id, model);
 
 
-        JTable table = new JTable(model);
+
+
         //JTable table = new JTable(new TableModel());
         JPanel card2 = new JPanel();
         //table.setFillsViewportHeight(true);
@@ -219,7 +218,23 @@ public class Fenêtre extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                checkLogin();
+
+                int id = checkLogin();
+                if (id != 0) {
+
+                    DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom", "Téléphone", "Type"}, 0);
+
+                    try {
+                        model = UserDAO.get_contacts(id, model);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    } catch (ClassNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
+                    JTable table = new JTable(model);
+                    card2.add(table);
+                }
+
 
 
             }
@@ -234,9 +249,11 @@ public class Fenêtre extends JFrame {
         this.getContentPane().add(content, BorderLayout.CENTER);
     }
 
-    public static void checkLogin() {
+    public static int checkLogin() {
         String login = field1.getText();
         String password = field2.getText();
+
+        int id = 0;
 
 
         UserDAO userDAO = new UserDAO();
@@ -246,18 +263,24 @@ public class Fenêtre extends JFrame {
             if (user.getName() == null) {
                 System.out.println("Mauvais login/mot de passe");
                 titre.setText("Mauvais login/mot de passe");
+
             }
             else {
                 System.out.println("Login ok pour l'utilisateur "+user.getName());
+                id = user.getId();
+                System.out.println(id);
+
                 c1.next(content);
             }
 
 
         } catch (SQLException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+
+        return id;
 
 
     }
