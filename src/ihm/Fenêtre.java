@@ -40,6 +40,7 @@ public class Fenêtre extends JFrame {
     private JComboBox ctype = new JComboBox();
     private JLabel labeltype = new JLabel("Type");
     private JButton refresh = new JButton("Refresh");
+    private JTable table = new JTable();
 
 
 
@@ -251,7 +252,9 @@ public class Fenêtre extends JFrame {
                         ex.printStackTrace();
                     }
                     JTable table = new JTable(model);
-                    card2.add(new JScrollPane(table));;
+                    //JTable table(model);
+                    JScrollPane scroll = new JScrollPane(table);
+                    card2.add(scroll);
                     card2.add(ajout);
                     card2.add(suppr);
                     card2.add(refresh);
@@ -504,6 +507,7 @@ public class Fenêtre extends JFrame {
         refresh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                card2.removeAll();
                 int id = frefresh();
                 if (id != 0) {
 
@@ -517,14 +521,18 @@ public class Fenêtre extends JFrame {
                     } catch (ClassNotFoundException ex) {
                         ex.printStackTrace();
                     }
+
+                    JTable table = new JTable(model);
+                    //table.setModel(model);
+                    //model.fireTableRowsInserted(1, 200);
                     //model.fireTableRowsUpdated();
                     //model.fireTableCellUpdated();
 
                     //JTable table = new JTable(model);
-                    //card2.add(new JScrollPane(table));;
-                    //card2.add(ajout);
-                    //card2.add(suppr);
-                    //card2.add(refresh);
+                    card2.add(new JScrollPane(table));;
+                    card2.add(ajout);
+                    card2.add(suppr);
+                    card2.add(refresh);
                 }
 
 
@@ -613,14 +621,17 @@ public class Fenêtre extends JFrame {
         try {
             User user = userDAO.login(login, password);
             if (user.getName() == null) {
-                System.out.println("Mauvais login/mot de passe");
-                titre.setText("Mauvais login/mot de passe");
+                System.out.println("error");
 
             }
             else {
-                System.out.println("Login ok pour l'utilisateur "+user.getName());
+
                 id = user.getId();
                 System.out.println(id);
+
+
+                c1.next(content);
+                c1.previous(content);
 
 
 
