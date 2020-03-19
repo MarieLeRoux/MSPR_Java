@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class UserDAO {
-    private static final String CREATE_QUERY = "INSERT INTO t_user (name, login, password) VALUES (?,?,?)";
-    private static final String FIND_ALL_QUERY = "SELECT * FROM t_user";
-    private static final String FIND_BY_ID = "SELECT * FROM t_user WHERE id = ?";
-    private static final String DELETE_QUERY = "DELETE FROM t_user WHERE id = ?";
-    private static final String FIND_BY_LOG_AND_PWD = "SELECT * FROM t_user WHERE login = ? AND password = ?";
-    private static final String UPDATE_QUERY = "UPDATE t_user SET name = ?, login = ?, password = ? WHERE id = ?";
+    private static final String CREATE_QUERY = "INSERT INTO user (name, login, password) VALUES (?,?,?)";
+    private static final String FIND_ALL_QUERY = "SELECT * FROM user";
+    private static final String FIND_BY_ID = "SELECT * FROM user WHERE id = ?";
+    private static final String DELETE_QUERY = "DELETE FROM user WHERE id = ?";
+    private static final String FIND_BY_LOG_AND_PWD = "SELECT * FROM user WHERE login = ? AND password = ?";
+    private static final String UPDATE_QUERY = "UPDATE user SET name = ?, login = ?, password = ? WHERE id = ?";
 
     public void create(User user) throws SQLException, ClassNotFoundException {
         Connection connection = PersistenceManager.getConnection();
@@ -82,7 +82,7 @@ public class UserDAO {
         return user;
     }
 
-    public Set<User> findAll() throws SQLException, ClassNotFoundException {
+    public static Set<User> findAll() throws SQLException, ClassNotFoundException {
         Connection connection = PersistenceManager.getConnection();
         Set<User> usersList = new HashSet<>();
         if ( null != connection ) {

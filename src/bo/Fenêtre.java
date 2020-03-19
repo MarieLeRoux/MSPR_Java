@@ -202,6 +202,9 @@ public class Fenêtre extends JFrame {
         JPanel card2 = new JPanel();
         card2.setBackground(Color.pink);
 
+
+
+
         boutonlog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -257,12 +260,15 @@ public class Fenêtre extends JFrame {
             Set<User> users = userDAO.findAll();
             for ( User user : users ) {
                 System.out.printf( "%-5d %-10s %-10s%n", user.getId(), user.getName(), user.getLogin() );
+
             }
         } catch ( SQLException e ) {
             e.printStackTrace();
         } catch ( ClassNotFoundException e ) {
             e.printStackTrace();
         }
+
+
 
     }
 }
