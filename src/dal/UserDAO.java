@@ -151,7 +151,7 @@ public class UserDAO {
 
 
         if (connection != null) {
-            try (PreparedStatement pst = connection.prepareStatement("SELECT lastName, firstName, phone, type FROM contact c JOIN user_contact u ON u.idUser = ?")
+            try (PreparedStatement pst = connection.prepareStatement("SELECT lastName, firstName, phone, type FROM contact c JOIN user_contact u ON u.idUser = ? GROUP BY c.id")
             ) {
                 pst.setInt(1, id);
                 ResultSet rs = pst.executeQuery();
