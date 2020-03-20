@@ -24,7 +24,7 @@ public class Fenêtre extends JFrame {
     private static JLabel nope = new JLabel("poui");
     private String[] listContent = {"CARD_1", "CARD_2", "CARD_3"};
     public static JTextField field1 = new JTextField("");
-    public static JTextField field2 = new JTextField("");
+    public static JPasswordField field2 = new JPasswordField("");
     private JButton boutonlog = new JButton("Connexion");
     private JButton ajout = new JButton("Ajouter un contact");
     private JButton suppr = new JButton("Supprimer un contact");
