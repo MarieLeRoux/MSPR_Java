@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="255cffd5-5245-4ec0-879b-4d7c9aaaf4ed" name="Default Changelist" comment="">
+    <list default="true" id="255cffd5-5245-4ec0-879b-4d7c9aaaf4ed" name="Default Changelist" comment="validsuppr">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_2_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mariadb_java_client_2_5_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bo/Fenêtre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bo/Fenêtre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dal/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dal/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ihm/Fenêtre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ihm/Fenêtre.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +27,12 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MariaDB - bdd_mspr@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="ExecutionTargetDialog">
@@ -59,8 +67,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$APPLICATION_CONFIG_DIR$/jdbc-drivers/MariaDB Connector J/2.4.1/mariadb-java-client-2.4.1.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -110,6 +118,7 @@
       <updated>1584467379506</updated>
       <workItem from="1584533350951" duration="1561000" />
       <workItem from="1584606759430" duration="26454000" />
+      <workItem from="1584692479442" duration="6931000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1584469686501</created>
@@ -188,7 +197,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584643346230</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Password field ok">
+      <created>1584695512543</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1584695512543</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Cleaning">
+      <created>1584696459197</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1584696459197</updated>
+    </task>
+    <task id="LOCAL-00014" summary="get_contact id">
+      <created>1584698929808</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1584698929808</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +234,10 @@
     <MESSAGE value="page contacts 2" />
     <MESSAGE value="grids ok" />
     <MESSAGE value="grids ok ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="grids ok ok" />
+    <MESSAGE value="Password field ok" />
+    <MESSAGE value="Cleaning" />
+    <MESSAGE value="get_contact id" />
+    <option name="LAST_COMMIT_MESSAGE" value="get_contact id" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1584550012131">
@@ -216,67 +249,79 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="72" y="182" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1584583796494" />
-    <state x="608" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584560868152">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="608" y="170" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584695448009">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="608" y="168" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584560868152" />
+    <state x="608" y="170" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584695448009" />
     <state x="285" y="233" key="#com.intellij.ide.util.MemberChooser" timestamp="1584610208522">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="285" y="233" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584610208522" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1584643344693">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1584701281449">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584643344693" />
-    <state x="585" y="115" key="CommitChangelistDialog2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543485043" />
+    <state x="585" y="115" key="CommitChangelistDialog2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584701281449" />
     <state x="278" y="226" key="ExecutionTargetDialog" timestamp="1584561013931">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="278" y="226" key="ExecutionTargetDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584561013931" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1584560931171">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1584695460619">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1584560931171" />
-    <state width="1877" height="271" key="GridCell.Tab.0.bottom" timestamp="1584645751599">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="740" y="278" key="FileChooserDialogImpl/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584695460619" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom" timestamp="1584701285567">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="271" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584645751599" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state width="1877" height="271" key="GridCell.Tab.0.center" timestamp="1584645751599">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="267" key="GridCell.Tab.0.bottom/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584701285567" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center" timestamp="1584701285567">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="271" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584645751599" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state width="1877" height="271" key="GridCell.Tab.0.left" timestamp="1584645751599">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="267" key="GridCell.Tab.0.center/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584701285567" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left" timestamp="1584701285567">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="271" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584645751599" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state width="1877" height="271" key="GridCell.Tab.0.right" timestamp="1584645751599">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="267" key="GridCell.Tab.0.left/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584701285567" />
+    <state width="1877" height="267" key="GridCell.Tab.0.right" timestamp="1584701285567">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="271" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584645751599" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543520422" />
-    <state x="0" y="98" key="SettingsEditor" timestamp="1584562292856">
+    <state width="1877" height="267" key="GridCell.Tab.0.right/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584701285567" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1584615970365">
       <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584615970365" />
+    <state x="672" y="236" key="MultipleFileMergeDialog" timestamp="1584615970371">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584615970371" />
+    <state x="499" y="110" key="SettingsEditor" timestamp="1584699395466">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="0" y="98" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584562292856" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1584643355369">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="499" y="110" key="SettingsEditor/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584699395466" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2" timestamp="1584698947489">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584643355369" />
-    <state x="552" y="255" key="Vcs.Push.Dialog.v2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584543425785" />
+    <state x="552" y="255" key="Vcs.Push.Dialog.v2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584698947489" />
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1584533412373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584533412373" />
-    <state x="289" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584562851203">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="289" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584700755700">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="289" y="440" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584562851203" />
+    <state x="289" y="444" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.90.1440.870/0.0.1920.1050@0.0.1920.1050" timestamp="1584700755700" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/MSPR_Java$App.ic" NAME="App Coverage Results" MODIFIED="1584583809825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/MSPR_Java$App.ic" NAME="App Coverage Results" MODIFIED="1584646528805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>.*</FILTER>
     </SUITE>
   </component>
