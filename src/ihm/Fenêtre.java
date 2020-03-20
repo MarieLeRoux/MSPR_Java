@@ -43,18 +43,12 @@ public class Fenêtre extends JFrame {
     private JTable table = new JTable();
 
 
-
-
     public Fenêtre() throws SQLException {
         this.setTitle("Carnet d'adresses");
         this.setSize(1000, 1000);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-
-
-
-
 
         //grille 4 x 4
         //cellule 0x0
@@ -122,9 +116,6 @@ public class Fenêtre extends JFrame {
         cell16.setBackground(Color.white);
         cell16.setPreferredSize(new Dimension(200,50));
 
-
-
-
         JPanel card1 = new JPanel();
         card1.setPreferredSize(new Dimension(1000,1000));
         card1.setBackground(Color.pink);
@@ -138,13 +129,10 @@ public class Fenêtre extends JFrame {
         card1.add(cell1, gbc);
         //case 0x1
         gbc.gridx = 1;
-        //gbc.gridy = 0;
         gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         card1.add(cell2, gbc);
         //case 0x2
-        //gbc.gridx = 2;
-        //card1.add(cell3, gbc);
         //case 0x3
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.gridx = 3;
@@ -173,8 +161,6 @@ public class Fenêtre extends JFrame {
         card1.add(cell9, gbc);
         //case 2x1
         gbc.gridx = 1;
-        //gbc.gridwidth = 2;
-        //gbc.fill = GridBagConstraints.HORIZONTAL;
         card1.add(cell10, gbc);
         //case 2x2
         gbc.gridx = 2;
@@ -194,55 +180,31 @@ public class Fenêtre extends JFrame {
         gbc.gridwidth = 2;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         card1.add(cell14, gbc);
-        //case 3x2
-        //gbc.gridx = 2;
-        //card1.add(cell15, gbc);
         //case 3x3
         gbc.gridx = 3;
         card1.add(cell16, gbc);
 
-
-
-
-        //card1.add(label);
-        //card1.add(field1);
         cell2.add(titre);
         cell6.add(label);
         cell7.add(field1);
         field1.setPreferredSize(new Dimension(100, 30));
-        //card1.add(label2);
-        //card1.add(field2);
         cell10.add(label2);
         cell11.add(field2);
         field2.setPreferredSize(new Dimension(100, 30));
-        //card1.add(boutonlog);
         cell14.add(boutonlog);
-
-
-
-
-
-
-
 
         JPanel card2 = new JPanel();
 
         card2.setBackground(Color.pink);
 
-
-
-
-
         boutonlog.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
 
                 int id = checkLogin();
                 if (id != 0) {
 
                     DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom", "Téléphone", "Type"}, 0);
-
 
                     try {
                         model = UserDAO.get_contacts(id, model);
@@ -259,8 +221,6 @@ public class Fenêtre extends JFrame {
                     card2.add(suppr);
                     card2.add(refresh);
                 }
-
-
 
             }
         });
@@ -362,8 +322,6 @@ public class Fenêtre extends JFrame {
         JPanel cellu24 = new JPanel();
         cellu24.setBackground(Color.white);
         cellu24.setPreferredSize(new Dimension(200, 30));
-
-
 
         JPanel card3 = new JPanel();
         card3.setBackground(Color.gray);
@@ -474,7 +432,6 @@ public class Fenêtre extends JFrame {
         gbc1.gridx = 3;
         card3.add(cellu24, gbc1);
 
-
         cellu2.add(labelajout);
 
         cellu6.add(labelnom);
@@ -493,8 +450,6 @@ public class Fenêtre extends JFrame {
         ctype.addItem("PERSO");
         cellu22.add(validajout);
         cellu23.add(annulajout);
-
-
 
         ajout.addActionListener(new ActionListener() {
             @Override
@@ -523,18 +478,12 @@ public class Fenêtre extends JFrame {
                     }
 
                     JTable table = new JTable(model);
-                    //table.setModel(model);
-                    //model.fireTableRowsInserted(1, 200);
-                    //model.fireTableRowsUpdated();
-                    //model.fireTableCellUpdated();
 
-                    //JTable table = new JTable(model);
                     card2.add(new JScrollPane(table));;
                     card2.add(ajout);
                     card2.add(suppr);
                     card2.add(refresh);
                 }
-
 
             }
         });
@@ -562,7 +511,6 @@ public class Fenêtre extends JFrame {
             }
         });
 
-
         content.setLayout(c1);
 
         content.add(card1, listContent[0]);
@@ -578,15 +526,12 @@ public class Fenêtre extends JFrame {
 
         int id = 0;
 
-
         UserDAO userDAO = new UserDAO();
-
         try {
             User user = userDAO.login(login, password);
             if (user.getName() == null) {
                 System.out.println("Mauvais login/mot de passe");
                 titre.setText("Mauvais login/mot de passe");
-
             }
             else {
                 System.out.println("Login ok pour l'utilisateur "+user.getName());
@@ -596,7 +541,6 @@ public class Fenêtre extends JFrame {
                 c1.next(content);
             }
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException | NoSuchAlgorithmException e) {
@@ -604,10 +548,7 @@ public class Fenêtre extends JFrame {
         }
 
         return id;
-
-
     }
-
 
     public static int frefresh() {
         String login = field1.getText();
@@ -615,26 +556,19 @@ public class Fenêtre extends JFrame {
 
         int id = 0;
 
-
         UserDAO userDAO = new UserDAO();
-
         try {
             User user = userDAO.login(login, password);
             if (user.getName() == null) {
                 System.out.println("error");
-
             }
             else {
 
                 id = user.getId();
                 System.out.println(id);
 
-
                 c1.next(content);
                 c1.previous(content);
-
-
-
             }
 
 
@@ -646,10 +580,7 @@ public class Fenêtre extends JFrame {
 
         return id;
 
-
     }
-
-
 
 
 }
