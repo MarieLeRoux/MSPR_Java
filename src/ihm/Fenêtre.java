@@ -470,7 +470,7 @@ public class Fenêtre extends JFrame {
                 card2.add(labelsuppr);
                 card2.add(textsuppr);
                 textsuppr.setPreferredSize(new Dimension(100, 30));
-                card2.add(validsupr);
+                card2.add(validsuppr);
                 card2.add(annulsuppr);
                 c1.next(content);
                 c1.previous(content);
@@ -480,7 +480,16 @@ public class Fenêtre extends JFrame {
         validsuppr.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                try {
+                    int contact = Integer.parseInt(textsuppr.getText());
+                    UserDAO.remove(contact);
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                } catch (ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                } catch (NumberFormatException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
@@ -625,7 +634,6 @@ public class Fenêtre extends JFrame {
                 c1.previous(content);
             }
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException | NoSuchAlgorithmException e) {
@@ -635,6 +643,5 @@ public class Fenêtre extends JFrame {
         return id;
 
     }
-
 
 }

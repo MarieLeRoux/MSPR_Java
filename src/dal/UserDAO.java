@@ -155,12 +155,12 @@ public class UserDAO {
         }
     }
 
-    public static void remove(Contact contact) throws SQLException, ClassNotFoundException {
+    public static void remove(int contact) throws SQLException, ClassNotFoundException {
         Connection connection = PersistenceManager.getConnection();
         User user = new User();
         if ( null != connection ) {
             try ( PreparedStatement pst = connection.prepareStatement("DELETE FROM contact WHERE id = ?")){
-                pst.setInt(1, contact.getId());
+                pst.setInt(1, contact);
                 pst.executeQuery();
             }
         }
