@@ -92,25 +92,6 @@ public class UserDAO {
         return usersList;
     }
 
-    public User remove(int id) throws SQLException, ClassNotFoundException {
-        Connection connection = PersistenceManager.getConnection();
-        User user = new User();
-        if ( null != connection ) {
-            try ( PreparedStatement pst = connection.prepareStatement(DELETE_QUERY)) {
-                pst.setInt(1, id);
-                pst.executeQuery();
-                //int id = rs.getInt("id");
-                System.out.println("Utilisateur supprimé");
-
-
-
-
-            }
-        }
-        return user;
-
-    }
-
     public User update(int id, User user) throws SQLException, ClassNotFoundException {
         Connection connection = PersistenceManager.getConnection();
 
@@ -134,16 +115,17 @@ public class UserDAO {
 
 
         if (connection != null) {
-            try (PreparedStatement pst = connection.prepareStatement("SELECT lastName, firstName, phone, type FROM contact c JOIN user_contact u ON u.idUser = ? GROUP BY c.id")
+            try (PreparedStatement pst = connection.prepareStatement("SELECT id, lastName, firstName, phone, type FROM contact c JOIN user_contact u ON u.idUser = ? GROUP BY c.id")
             ) {
                 pst.setInt(1, id);
                 ResultSet rs = pst.executeQuery();
                 while(rs.next()){
+                    int idContact = rs.getInt("id");
                     String firstName = rs.getString("firstName");
                     String lastName = rs.getString("lastName");
                     String phone = rs.getString("phone");
                     String type = rs.getString("type");
-                    model.addRow(new Object[]{firstName, lastName, phone, type});
+                    model.addRow(new Object[]{idContact, lastName, firstName, phone, type});
 
                 }
 
@@ -170,6 +152,17 @@ public class UserDAO {
                 }
             }
 
+        }
+    }
+
+    public static void remove(Contact contact) throws SQLException, ClassNotFoundException {
+        Connection connection = PersistenceManager.getConnection();
+        User user = new User();
+        if ( null != connection ) {
+            try ( PreparedStatement pst = connection.prepareStatement("DELETE FROM contact WHERE id = ?")){
+                pst.setInt(1, contact.getId());
+                pst.executeQuery();
+            }
         }
     }
 }
