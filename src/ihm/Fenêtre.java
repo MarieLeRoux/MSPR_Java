@@ -40,7 +40,11 @@ public class Fenêtre extends JFrame {
     private JComboBox ctype = new JComboBox();
     private JLabel labeltype = new JLabel("Type");
     private JButton refresh = new JButton("Refresh");
-    private JTable table = new JTable();
+    private JLabel vide = new JLabel("      ");
+    private JLabel labelsuppr = new JLabel("ID du contact à supprimer");
+    private JTextField textsuppr = new JTextField("");
+    private JButton validsuppr = new JButton("Valider");
+    private JButton annulsuppr = new JButton("Annuler");
 
 
     public Fenêtre() throws SQLException {
@@ -118,7 +122,7 @@ public class Fenêtre extends JFrame {
 
         JPanel card1 = new JPanel();
         card1.setPreferredSize(new Dimension(1000,1000));
-        card1.setBackground(Color.pink);
+        card1.setBackground(Color.white);
         card1.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         //case 0x0
@@ -195,7 +199,7 @@ public class Fenêtre extends JFrame {
 
         JPanel card2 = new JPanel();
 
-        card2.setBackground(Color.pink);
+        card2.setBackground(Color.white);
 
         boutonlog.addActionListener(new ActionListener() {
             @Override
@@ -204,7 +208,7 @@ public class Fenêtre extends JFrame {
                 int id = checkLogin();
                 if (id != 0) {
 
-                    DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom", "Téléphone", "Type"}, 0);
+                    DefaultTableModel model = new DefaultTableModel(new String[]{"ID","Nom", "Prénom", "Téléphone", "Type"}, 0);
 
                     try {
                         model = UserDAO.get_contacts(id, model);
@@ -324,7 +328,7 @@ public class Fenêtre extends JFrame {
         cellu24.setPreferredSize(new Dimension(200, 30));
 
         JPanel card3 = new JPanel();
-        card3.setBackground(Color.gray);
+        card3.setBackground(Color.white);
         card3.setLayout(new GridBagLayout());
         GridBagConstraints gbc1 = new GridBagConstraints();
 
@@ -459,6 +463,56 @@ public class Fenêtre extends JFrame {
             }
         });
 
+        suppr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                card2.add(vide);
+                card2.add(labelsuppr);
+                card2.add(textsuppr);
+                textsuppr.setPreferredSize(new Dimension(100, 30));
+                card2.add(validsupr);
+                card2.add(annulsuppr);
+                c1.next(content);
+                c1.previous(content);
+            }
+        });
+
+        validsuppr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        annulsuppr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                card2.removeAll();
+                int id = frefresh();
+                if (id != 0) {
+
+                    DefaultTableModel model = new DefaultTableModel(new String[]{"ID","Nom", "Prénom", "Téléphone", "Type"}, 0);
+
+
+                    try {
+                        model = UserDAO.get_contacts(id, model);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    } catch (ClassNotFoundException ex) {
+                        ex.printStackTrace();
+                    }
+
+                    JTable table = new JTable(model);
+
+                    card2.add(new JScrollPane(table));;
+                    card2.add(ajout);
+                    card2.add(suppr);
+                    card2.add(refresh);
+                }
+
+            }
+        });
+
         refresh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -466,7 +520,7 @@ public class Fenêtre extends JFrame {
                 int id = frefresh();
                 if (id != 0) {
 
-                    DefaultTableModel model = new DefaultTableModel(new String[]{"Nom", "Prénom", "Téléphone", "Type"}, 0);
+                    DefaultTableModel model = new DefaultTableModel(new String[]{"ID","Nom", "Prénom", "Téléphone", "Type"}, 0);
 
 
                     try {
